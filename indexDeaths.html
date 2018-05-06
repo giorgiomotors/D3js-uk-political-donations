@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Who's funding the big three?</title>
+    <meta property="og:image" content="http://isthisjam.com.s3.amazonaws.com/img/bubble-img.png" />
+    <!-- 180x110 Image for Linkedin -->
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="110" />
+    <meta property="og:image" content="http://isthisjam.com.s3.amazonaws.com/img/bubble-img.png" />
+    <!-- 200x200 Image for Facebook -->
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700">
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44807543-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</head>
+<!-- Add feature detection and noscript -->
+
+<body>
+
+    <header role="banner" id="title">
+        <h1>New Zealand Government Statistics [Deaths]</h1>
+    </header>
+    <nav role="navigation">
+        <ul>
+            <li><a href="#" role="button" class="pure-button switch" id="all-donations">All deaths</a>
+            </li>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-money-source">By Sex</a>
+            </li>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-party">By Year</a>
+            </li>
+            <li><a href="#" role="button" class="pure-button switch" id="group-by-donor-type">By Ages</a>
+            </li>			
+        </ul>
+    </nav>
+
+    <div id="annotations">
+
+        <!-- Initial annotations -->
+        <div id="initial-content">
+			<div id ="zoom">
+				 <div class="small">
+					<h2>Deaths at New Zealand Government Statistics</h2>
+					<p>Each circle represents the total amount of deaths during that period.</p>
+					<p>Season: 2008-2017</p>
+
+					
+					<p>Data source: <a href="https://www.stats.govt.nz/tools/csv-files-for-download/">New Zealand Government.</a>
+					</p>
+				</div>
+			</div>
+        </div>
+        <div id="value-scale">
+            <div id="f">
+                <p>&#8212;https://www.stats.govt.nz/tools/csv-files-for-download</p>
+            </div>
+            <div id="a">
+                <strong>10 &#8212;</strong>
+            </div>
+            <div id="b">
+                <strong>100 &#8212;</strong>
+            </div>
+            <div id="c">
+                <strong>1k &#8212;</strong>
+            </div>
+            <div id="d">
+                <strong>10k &#8212;</strong>
+            </div>
+            <div id="e">
+                <strong>100k &#8212;</strong>
+            </div>
+        </div>
+        <!-- End initial-->
+
+        <!-- Public or private money annotations -->
+        <div id="view-source-type">
+            <div id="public-or-private-money" class="public-private">
+                <h3>Male vs Female</h3>
+                <p>Φαίνεται φανερά ότι μας λένε ψέμματα. Είναι δυνατόν να παραμένουν ίδια τα νούμερα? Ναι, είναι δυνατόν. Νέα Ζηλανδία !</p>
+            </div>
+            <div id="public-or-private-money-split" class="public-private">
+                <div id="private-money">
+                    <h5>Male</h5>
+                    <strong>Total: <span id="sex1"> </span>
+                        </strong>
+                            <p>Proportion of all deaths:
+                                <strong><span id="psex1"> </span>%</strong>
+                            </p>
+                </div>
+                <div id="public-money">
+                    <h5>Female</h5>
+                    <strong>Total: <span id="sex2"> </span>
+                        </strong>
+                            <p>Proportion of all deaths:
+                                <strong><span id="psex2"> </span>%</strong>
+                            </p>
+                </div>
+          </div>
+        </div>
+        <!-- End public or private money -->
+
+        <div id="view-party-type">
+            <h3>Deaths by group of years</h3>
+            <div id="conservative">
+                <h5>2008-2012</h5>
+                <strong>Total: <span id="year1"> </span>
+                    </strong>
+                        
+            </div>
+            <div id="labour">
+                <h5>2009-2017</h5>
+                <strong>Total: <span id="year2"> </span>
+                    </strong>                        
+            </div>
+        </div>
+        <div id="view-donor-type">
+            <div style="width:100px; height: 100px; position: absolute; padding: 10px; background: rgba(8, 127, 189, 0.2);top: 110px; left: 300px;"><h5>Ages: 0-19</h5><strong>Total: <span id="tage1"> </span></strong></div>
+			<div style="width:100px; height: 100px; position: absolute; padding: 10px; background: rgba(8, 127, 189, 0.2);top: 310px; left: 300px;"><h5>Ages: 20–49</h5><strong>Total: <span id="tage2"> </span></strong></div>
+			<div style="width:100px; height: 100px; position: absolute; padding: 10px; background: rgba(8, 127, 189, 0.2);top: 510px; left: 300px;"><h5>Ages: 50–99</h5><strong>Total: <span id="tage3"> </span></strong></div>
+        </div>
+		
+		<div id="view-amount-type">
+		
+            <h3>By Amount</h3>
+			
+            <div id="conservative">
+                <h5>Big Amount</h5>
+                <strong>Above &#163; 1000000</strong>                        
+            </div>
+			
+            <div id="labour">
+                <h5>Small Amount</h5>
+                <strong>Below &#163; 1000000</strong>
+            </div>            
+			
+			<div id="libdem">
+			</div>
+        </div>
+        
+		
+		
+    </div>
+    <div id="chart"></div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js" charset="utf-8"></script>
+    <script src="chartDeaths.js"></script>
+	
+
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.1/js/materialize.min.js"></script>
+	<script src="speech.js"></script>
+	
+	<link rel="stylesheet" href="anythingzoomer.css">
+	<script src="jquery.anythingzoomer.js"></script>
+	
+	<script>
+  $(function(){
+    $("#zoom").anythingZoomer({
+
+    // ***************** content areas *****************
+    // class of small content area; the element with this class
+    // name must be inside of the wrapper
+    smallArea: 'small',
+
+    // class of large content area; this class must exist inside
+    // of the wrapper. When the clone option is true, it will add
+    // this automatically
+    largeArea: 'large',
+
+    // Make a clone of the small content area, use css to modify
+    // the style; default is false;
+    // set to true here to clone the small content
+    clone: true,
+
+    // ***************** appearance *****************
+    // Set to true to add the overlay style while hovering the
+    // small content, false to disable
+    overlay: true,
+
+    // fade animation speed (in milliseconds)
+    speed: 10,
+
+    // How far outside the wrapped edges the mouse can go;
+    // previously called "expansionSize"
+    edge: 30,
+
+    // adjust the horizontal position of the large content inside
+    // the zoom window as desired
+    offsetX: 0,
+
+    // adjust the vertical position of the large content inside
+    // the zoom window as desired
+    offsetY: 0,
+
+    // ***************** functionality *****************
+    // event that allows toggling between small and large
+    // elements; default is double click ('dblclick')
+    switchEvent: 'dblclick',
+
+    // time to delay before revealing the zoom window.
+    delay: 0,
+
+    // ***************** edit mode *****************
+    // add x,y coordinates into zoom window to make it easier to
+    // find coordinates
+    edit: false,
+
+    // ***************** callbacks *****************
+    // AnythingZoomer done initializing
+    initialzied: function(e, zoomer) {},
+
+    // zoom window visible
+    zoom: function(e, zoomer) {},
+
+    // zoom window hidden
+    unzoom: function(e, zoomer) {}
+
+  });
+  });
+</script>
+	
+</body>
+
+</html>
