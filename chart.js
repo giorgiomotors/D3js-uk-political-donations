@@ -49,6 +49,9 @@ var comma = d3.format(",.0f");
 const rollSound = new Audio("./data/beep-08b.wav");
 
 function transition(name) {
+	
+	$( "#imageregion" ).html('');
+	
 	if (name === "all-donations") {
 		$("#initial-content").fadeIn(250);
 		$("#value-scale").fadeIn(1000);
@@ -393,15 +396,9 @@ function mouseover(d, i) {
 	// image url that want to check
 	var imageFile = "https://raw.githubusercontent.com/ioniodi/D3js-uk-political-donations/master/photos/" + donor + ".ico";
 
-	
-	
 	// *******************************************
 	
-	
-	
-
-	
-
+	$( "#imageregion" ).append( $( "<img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'>" ) );
 	
 	var infoBox = "<p> Source: <b>" + donor + "</b> " +  "<span><img src='" + imageFile + "' height='42' width='42' onError='this.src=\"https://github.com/favicon.ico\";'></span></p>" 	
 	
